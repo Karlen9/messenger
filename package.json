@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Karlen9/messenger/issues"
   },
-  "homepage": "https://github.com/Karlen9/messenger#readme"
+  "homepage": "https://github.com/Karlen9/messenger#readme",
+  "dependencies": {
+    "react": "^18.0.0"
+  }
 }
