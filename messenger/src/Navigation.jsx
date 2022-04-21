@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { ChatScreen } from './components/screens/ChatScreen'
+import { ChatsScreen } from './components/screens/ChatsScreen'
 import { ChatIcon } from './assets/icons/ChatIcon'
 import { ProfileScreen } from './components/screens/ProfileScreen'
 import { LoginScreen } from './components/screens/LoginScreen'
@@ -33,7 +33,7 @@ export const Navigation = ({ route }) => {
 
       <Tab.Screen
         name="Chats"
-        component={ChatScreen}
+        component={ChatsScreen}
         options={{
           tabBarIcon: ({ focused }) => {
             if (route.name === 'Chats') {

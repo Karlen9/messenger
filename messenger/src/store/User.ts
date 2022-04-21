@@ -1,4 +1,4 @@
-import { computed, makeObservable } from "mobx";
+import { action, computed, makeObservable } from "mobx";
 import { v4 } from "uuid";
 
 interface UserMetaData {
@@ -12,10 +12,11 @@ export class User {
   private _firstName: string;
   private _lastName: string;
   private _number: string;
+  private _avatar: string = '../assets/img/user.png';
   private _isAdmin: boolean = false;
-  metaData: UserMetaData;
+  metaData?: UserMetaData;
 
-  constructor(firstName: string, lastName: string, number: string, metaData: UserMetaData) {
+  constructor(firstName: string, lastName: string, number: string, metaData?: UserMetaData) {
     this._firstName = firstName;
     this._lastName = lastName;
     this._number = number;
@@ -42,6 +43,22 @@ export class User {
 
   @computed get isAdmin(): boolean {
     return this._isAdmin;
+  }
+
+  @computed get avatar(): string{
+    return this._avatar;
+  }
+
+  @action setAvatar(value: string) {
+    this._avatar = value
+  }
+
+  @action setName(value: string) {
+    this._firstName = value
+  }
+
+  @action setNumber(value: string) {
+    this._number = value
   }
 
 }
